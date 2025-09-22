@@ -16,10 +16,7 @@ export default {
     methods: {
         // Add code here
         cycleTheme() {
-            this.currentThemeIndex += 1;
-            if (this.currentThemeIndex > this.themes.length - 1) {
-                this.currentThemeIndex = 0;
-            }
+            this.currentThemeIndex = (this.currentThemeIndex + 1) % 3;
             const theme = this.themes[this.currentThemeIndex]
             if (theme == "dark") {
                 this.bgColor = "#333"
@@ -66,11 +63,11 @@ export default {
         <!-- Preview Section -->
         <div class="preview-section">
             <h2>Live Preview</h2>
-            <div class="preview-card" :style="{backgroundColor: bgColor}"> <!-- Add code here to set background color and text color -->
+            <div class="preview-card" :style="{backgroundColor: bgColor, color: textColor}"> <!-- Add code here to set background color and text color -->
                 <img :src="imageUrl" class="preview-img">
-                <h3 :style="{color: textColor}">{{ name || 'Your Name' }}</h3>
-                <h4 :style="{color: textColor}">{{ job || 'Job Title' }}</h4>
-                <p  :style="{color: textColor}">{{ bio || 'Write something about yourself...' }}</p>
+                <h3>{{ name || 'Your Name' }}</h3>
+                <h4>{{ job || 'Job Title' }}</h4>
+                <p>{{ bio || 'Write something about yourself...' }}</p>
             </div>
         </div>
     </div>

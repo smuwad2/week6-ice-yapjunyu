@@ -21,7 +21,7 @@
             div ID : {{id}} 
         </div>
         
-        <button type="button" :class="isRed ? 'btn-danger': 'btn-secondary'" @click="isRed = !isRed">Change Color</button>
+        <button type="button" :class="isRed ? 'btn btn-danger': 'btn btn-primary'" @click="isRed = !isRed">Change Color</button>
     </div>
 
 </template>
