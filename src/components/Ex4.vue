@@ -3,6 +3,8 @@
         data() {
             return {
                 // Add code here
+                isRed: false,
+                id: "demo1"
             }
         },
         methods: { 
@@ -15,11 +17,11 @@
     
     <!-- Modify code here -->
     <div class="container">
-        <div v-bind:id="id" class="m-2">
+        <div v-bind:id="id" class="m-2" :class="isRed ? 'redBox':'blueBox'">
             div ID : {{id}} 
         </div>
         
-        <button type="button">Change Color</button>
+        <button type="button" :class="isRed ? 'btn-danger': 'btn-secondary'" @click="isRed = !isRed">Change Color</button>
     </div>
 
 </template>
